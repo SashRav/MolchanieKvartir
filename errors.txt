@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sceens/screens.rpy", line 509: Line is indented, but the preceding imagebutton statement does not expect a block. Please check this line's indentation.
-    style_prefix "about"
+File "game/sceens/screens.rpy", line 522: Line is indented, but the preceding draggable statement does not expect a block. Please check this line's indentation.
+    pagekeys True
     ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Sat Feb 18 17:56:45 2023
+Sat Feb 18 22:13:17 2023

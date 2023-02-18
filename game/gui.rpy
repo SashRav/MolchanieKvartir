@@ -22,65 +22,64 @@ init python:
 ##
 ## Цвета текста в интерфейсе.
 
-## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = u'#0099cc'
+## An accent color used throughout the interface to label and highlight text.
+define gui.accent_color = u'#db027c'
 
-## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
-define gui.idle_color = u'#888888'
+## The color used for a text button when it is neither selected nor hovered.
+define gui.idle_color = u'#5f5f5f'
 
-## Small_color используется в маленьком тексте, который должен быть ярче/темнее,
-## для того, чтобы выделяться.
-define gui.idle_small_color = u'#aaaaaa'
+## The small color is used for small text, which needs to be brighter/darker to
+## achieve the same effect.
+define gui.idle_small_color = u'#a1a1a1'
 
-## Цвет, используемых в кнопках и панелях, когда они наведены.
-define gui.hover_color = u'#66c1e0'
+## The color that is used for buttons and bars that are hovered.
+define gui.hover_color = u'#db027c'
 
-## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
-## Кнопка может быть выбрана, если это текущий экран или текущее значение
-## настройки.
-define gui.selected_color = u'#ffffff'
+## The color used for a text button when it is selected but not focused. A
+## button is selected if it is the current screen or preference value.
+define gui.selected_color = u'#a5a5a5'
 
-## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
-define gui.insensitive_color = u'#8888887f'
+## The color used for a text button when it cannot be selected.
+define gui.insensitive_color = u'#bebebe'
 
-## Цвета, используемые для частей панелей, которые не заполняются. Они
-## используются не напрямую, а только при воссоздании файлов изображений.
+## Colors used for the portions of bars that are not filled in. These are not
+## used directly, but are used when re-generating bar image files.
 define gui.muted_color = u'#003d51'
 define gui.hover_muted_color = u'#005b7a'
 
-## Цвета, используемые в тексте диалогов и выборов.
-define gui.text_color = u'#ffffff'
-define gui.interface_text_color = u'#ffffff'
+## The colors used for dialogue and menu choice text.
+define gui.text_color = u'#3f4576'
+define gui.interface_text_color = u'#3f4576'
 
 
 ## Шрифты и их размеры #########################################################
 
-## Шрифт, используемый внутриигровым текстом.
-define gui.text_font = "DejaVuSans.ttf"
+## The font used for in-game text.
+define gui.text_font = "fonts/RobotoSlab-Regular.ttf"
 
-## Шрифт, используемый именами персонажей.
-define gui.name_text_font = "DejaVuSans.ttf"
+## The font used for character names.
+define gui.name_text_font = "fonts/RobotoSlab-Medium.ttf"
 
-## Шрифт, используемый текстом вне игры.
-define gui.interface_text_font = "DejaVuSans.ttf"
+## The font used for out-of-game text.
+define gui.interface_text_font = "fonts/RobotoSlab-Regular.ttf"
 
-## Размер нормального текста диалога.
-define gui.text_size = 33
+## The size of normal dialogue text.
+define gui.text_size = 22
 
-## Размер имён персонажей.
-define gui.name_text_size = 45
+## The size of character names.
+define gui.name_text_size = 30
 
-## Размер текста в пользовательском интерфейсе.
-define gui.interface_text_size = 33
+## The size of text in the game's user interface.
+define gui.interface_text_size = 22
 
-## Размер заголовков в пользовательском интерфейсе.
-define gui.label_text_size = 36
+## The size of labels in the game's user interface.
+define gui.label_text_size = 24
 
-## Размер текста на экране уведомлений.
-define gui.notify_text_size = 24
+## The size of text on the notify screen.
+define gui.notify_text_size = 16
 
-## Размер заголовка игры.
-define gui.title_text_size = 75
+## The size of the game's title.
+define gui.title_text_size = 50
 
 
 ## Главное и игровое меню. #####################################################
@@ -94,51 +93,48 @@ define gui.game_menu_background = "gui/game_menu.png"
 ##
 ## Эти переменные контролируют, как диалог появляется на отдельной строчке.
 
-## Высота текстового окна, содержащего диалог.
-define gui.textbox_height = 278
+## The height of the textbox containing dialogue.
+define gui.textbox_height = 185
 
-## Местоположение текстового окна по вертикали экрана. 0.0 — верх, 0.5 — центр и
-## 1.0 — низ.
+## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
+## center, and 1.0 is the bottom.
 define gui.textbox_yalign = 1.0
 
 
-## Местоположение имени говорящего персонажа по отношению к текстовому окну.
-## Это могут быть целые значения в пикселях слева и сверху от начала окна или
-## процентное отношение, например, 0.5 для центрирования.
-define gui.name_xpos = 360
-define gui.name_ypos = 0
+## The placement of the speaking character's name, relative to the textbox.
+## These can be a whole number of pixels from the left or top, or 0.5 to center.
+define gui.name_xpos = 300
+define gui.name_ypos = -40
 
-## Горизонтальное выравнивание имени персонажа. Это может быть 0.0 для
-## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного
-## выравнивания.
-define gui.name_xalign = 0.0
+## The horizontal alignment of the character's name. This can be 0.0 for left-
+## aligned, 0.5 for centered, and 1.0 for right-aligned.
+define gui.name_xalign = 0.5
 
-## Ширина, высота и границы окна, содержащего имя персонажа или None, для
-## автоматической размерки.
-define gui.namebox_width = None
-define gui.namebox_height = None
+## The width, height, and borders of the box containing the character's name, or
+## None to automatically size it.
+define gui.namebox_width = 250
+define gui.namebox_height = 70
 
-## Границы окна, содержащего имя персонажа слева, сверху, справа и снизу по
-## порядку.
+## The borders of the box containing the character's name, in left, top, right,
+## bottom order.
 define gui.namebox_borders = Borders(5, 5, 5, 5)
 
-## Если True, фон текстового окна будет моститься (расширяться по эффекту
-## плитки). Если False, фон текстового окна будет фиксированным.
+## If True, the background of the namebox will be tiled, if False, the
+## background of the namebox will be scaled.
 define gui.namebox_tile = False
 
 
-## Размещение диалога по отношению к текстовому окну. Это могут быть целые
-## значения в пикселях слева и сверху от текстового окна или процентное
-## отношение, например, 0.5 для центрирования.
-define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+## The placement of dialogue relative to the textbox. These can be a whole
+## number of pixels relative to the left or top side of the textbox, or 0.5 to
+## center.
+define gui.dialogue_xpos = 268
+define gui.dialogue_ypos = 50
 
-## Максимальная ширина текста диалога в пикселях.
-define gui.dialogue_width = 1116
+## The maximum width of dialogue text, in pixels.
+define gui.dialogue_width = 744
 
-## Горизонтальное выравнивание текста диалога. Это может быть 0.0 для
-## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного
-## выравнивания.
+## The horizontal alignment of the dialogue text. This can be 0.0 for left-
+## aligned, 0.5 for centered, and 1.0 for right-aligned.
 define gui.dialogue_text_xalign = 0.0
 
 
@@ -147,32 +143,31 @@ define gui.dialogue_text_xalign = 0.0
 ## Эти переменные, вместе с файлами изображений в gui/button, контролируют
 ## аспекты того, как отображаются кнопки.
 
-## Ширина и высота кнопки в пикселях. Если None, Ren'Py самостоятельно
-## рассчитает размер.
+## The width and height of a button, in pixels. If None, Ren'Py computes a size.
 define gui.button_width = None
 define gui.button_height = None
 
-## Границы каждой стороны кнопки в порядке слева, сверху, справа, снизу.
-define gui.button_borders = Borders(6, 6, 6, 6)
+## The borders on each side of the button, in left, top, right, bottom order.
+define gui.button_borders = Borders(4, 4, 4, 4)
 
-## Если True, фон изображения будет моститься. Если False, фон изображения будет
-## линейно масштабирован.
+## If True, the background image will be tiled. If False, the background image
+## will be linearly scaled.
 define gui.button_tile = False
 
-## Шрифт, используемый кнопкой.
+## The font used by the button.
 define gui.button_text_font = gui.interface_text_font
 
-## Размер текста, используемый кнопкой.
+## The size of the text used by the button.
 define gui.button_text_size = gui.interface_text_size
 
-## Цвет текста в кнопке в различных состояниях.
+## The color of button text in various states.
 define gui.button_text_idle_color = gui.idle_color
 define gui.button_text_hover_color = gui.hover_color
 define gui.button_text_selected_color = gui.selected_color
 define gui.button_text_insensitive_color = gui.insensitive_color
 
-## Горизонтальное выравнивание текста в кнопке. (0.0 — лево, 0.5 — по центру,
-## 1.0 — право).
+## The horizontal alignment of the button text. (0.0 is left, 0.5 is center, 1.0
+## is right).
 define gui.button_text_xalign = 0.0
 
 
@@ -182,16 +177,16 @@ define gui.button_text_xalign = 0.0
 ##
 ## Эти настройки используются стандартным интерфейсом:
 
-define gui.radio_button_borders = Borders(27, 6, 6, 6)
+define gui.radio_button_borders = Borders(18, 4, 4, 4)
 
-define gui.check_button_borders = Borders(27, 6, 6, 6)
+define gui.check_button_borders = Borders(18, 4, 4, 4)
 
 define gui.confirm_button_text_xalign = 0.5
 
-define gui.page_button_borders = Borders(15, 6, 15, 6)
+define gui.page_button_borders = Borders(10, 4, 10, 4)
 
-define gui.quick_button_borders = Borders(15, 6, 15, 0)
-define gui.quick_button_text_size = 21
+define gui.quick_button_borders = Borders(10, 4, 10, 0)
+define gui.quick_button_text_size = 22
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
 
@@ -206,14 +201,15 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ##
 ## Кнопки выбора используются во внутриигровых меню.
 
-define gui.choice_button_width = 1185
+define gui.choice_button_width = 850
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(150, 8, 150, 8)
+define gui.choice_button_borders = Borders(200, 40, 200, 40)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#cccccc"
+
+define gui.choice_button_text_idle_color = "#ffffff"
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = "#444444"
 
@@ -224,21 +220,21 @@ define gui.choice_button_text_insensitive_color = "#444444"
 ## описывающий слот сохранения. Слот сохранения использует файлы из gui/button,
 ## как и другие виды кнопок.
 
-## Кнопка слота сохранения.
-define gui.slot_button_width = 414
-define gui.slot_button_height = 309
-define gui.slot_button_borders = Borders(15, 15, 15, 15)
-define gui.slot_button_text_size = 21
+## The save slot button.
+define gui.slot_button_width = 276
+define gui.slot_button_height = 206
+define gui.slot_button_borders = Borders(10, 10, 10, 10)
+define gui.slot_button_text_size = 14
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
 define gui.slot_button_text_selected_hover_color = gui.hover_color
 
-## Ширина и высота миниатюры, используемой слотом сохранения.
-define config.thumbnail_width = 384
-define config.thumbnail_height = 216
+## The width and height of thumbnails used by the save slots.
+define config.thumbnail_width = 256
+define config.thumbnail_height = 144
 
-## Количество колонок и рядов в таблице слотов.
+## The number of columns and rows in the grid of save slots.
 define gui.file_slot_cols = 3
 define gui.file_slot_rows = 2
 
@@ -248,36 +244,34 @@ define gui.file_slot_rows = 2
 ## Эти переменные контролируют позиционирование и интервалы различных элементов
 ## пользовательского интерфейса.
 
-## Местоположение левого края навигационных кнопок по отношению к левому краю
-## экрана.
-define gui.navigation_xpos = 60
+## The position of the left side of the navigation buttons, relative to the left
+## side of the screen.
+define gui.navigation_xpos = 40
 
-## Вертикальная позиция индикатора пропуска.
-define gui.skip_ypos = 15
+## The vertical position of the skip indicator.
+define gui.skip_ypos = 10
 
-## Вертикальная позиция экрана уведомлений.
-define gui.notify_ypos = 68
+## The vertical position of the notify screen.
+define gui.notify_ypos = 45
 
-## Интервал между выборами в меню.
-define gui.choice_spacing = 33
+## The spacing between menu choices.
+define gui.choice_spacing = 22
 
-## Кнопки в секции навигации главного и игрового меню.
-define gui.navigation_spacing = 6
+## Buttons in the navigation section of the main and game menus.
+define gui.navigation_spacing = 4
 
-## Контролирует интервал между настройками.
-define gui.pref_spacing = 15
+## Controls the amount of spacing between preferences.
+define gui.pref_spacing = 10
 
-## Контролирует интервал между кнопками настройки.
+## Controls the amount of spacing between preference buttons.
 define gui.pref_button_spacing = 0
 
-## Интервал между кнопками страниц.
+## The spacing between file page buttons.
 define gui.page_spacing = 0
 
-## Интервал между слотами.
-define gui.slot_spacing = 15
+## The spacing between file slots.
+define gui.slot_spacing = 10
 
-## Позиция текста главного меню.
-define gui.main_menu_text_xalign = 1.0
 
 
 ## Рамки #######################################################################
@@ -285,19 +279,19 @@ define gui.main_menu_text_xalign = 1.0
 ## Эти переменные контролируют вид рамок, содержащих компоненты
 ## пользовательского интерфейса, когда наложения или окна не представлены.
 
-## Генерируем рамки.
-define gui.frame_borders = Borders(6, 6, 6, 6)
+## Generic frames.
+define gui.frame_borders = Borders(4, 4, 4, 4)
 
-## Рамки, используемые в частях экрана подтверждения.
-define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
+## The frame that is used as part of the confirm screen.
+define gui.confirm_frame_borders = Borders(40, 30, 40, 30)
 
-## Рамки, используемые в частях экрана пропуска.
-define gui.skip_frame_borders = Borders(24, 8, 75, 8)
+## The frame that is used as part of the skip screen.
+define gui.skip_frame_borders = Borders(16, 5, 50, 5)
 
-## Рамки, используемые в частях экрана уведомлений.
-define gui.notify_frame_borders = Borders(24, 8, 60, 8)
+## The frame that is used as part of the notify screen.
+define gui.notify_frame_borders = Borders(16, 5, 40, 5)
 
-## Должны ли фоны рамок моститься?
+## Should frame backgrounds be tiled?
 define gui.frame_tile = False
 
 
@@ -308,56 +302,67 @@ define gui.frame_tile = False
 ## Стандартный GUI использует только ползунки и вертикальные полосы прокрутки.
 ## Все остальные полосы используются только в новосозданных экранах.
 
-## Высота горизонтальных панелей, полос прокрутки и ползунков. Ширина
-## вертикальных панелей, полос прокрутки и ползунков.
-define gui.bar_size = 38
-define gui.scrollbar_size = 18
-define gui.slider_size = 38
+## The height of horizontal bars, scrollbars, and sliders. The width of vertical
+## bars, scrollbars, and sliders.
+define gui.bar_size = 25
+define gui.scrollbar_size = 12
+define gui.slider_size = 25
 
-## True, если изображения панелей должны моститься. False, если они должны быть
-## линейно масштабированы.
+## True if bar images should be tiled. False if they should be linearly scaled.
 define gui.bar_tile = False
 define gui.scrollbar_tile = False
 define gui.slider_tile = False
 
-## Горизонтальные границы.
-define gui.bar_borders = Borders(6, 6, 6, 6)
-define gui.scrollbar_borders = Borders(6, 6, 6, 6)
-define gui.slider_borders = Borders(6, 6, 6, 6)
+## Horizontal borders.
+define gui.bar_borders = Borders(4, 4, 4, 4)
+define gui.scrollbar_borders = Borders(4, 4, 4, 4)
+define gui.slider_borders = Borders(4, 4, 4, 4)
 
-## Вертикальные границы.
-define gui.vbar_borders = Borders(6, 6, 6, 6)
-define gui.vscrollbar_borders = Borders(6, 6, 6, 6)
-define gui.vslider_borders = Borders(6, 6, 6, 6)
+## Vertical borders.
+define gui.vbar_borders = Borders(4, 4, 4, 4)
+define gui.vscrollbar_borders = Borders(4, 4, 4, 4)
+define gui.vslider_borders = Borders(4, 4, 4, 4)
 
-## Что делать с непрокручиваемыми полосами прокрутки в интерфейсе. "hide" прячет
-## их, а None их показывает.
-define gui.unscrollable = "hide"
+## What to do with unscrollable scrollbars in the gui. "hide" hides them, while
+## None shows them.
 
 
 ## История #####################################################################
 ##
 ## Экран истории показывает диалог, который игрок уже прошёл.
 
-## Количество диалоговых блоков истории, которые Ren'Py будет хранить.
+## The number of blocks of dialogue history Ren'Py will keep.
 define config.history_length = 250
 
-## Высота доступных записей на экране истории, или None, чтобы задать высоту в
-## зависимости от производительности.
-define gui.history_height = 210
+## The height of a history screen entry, or None to make the height variable at
+## the cost of performance.
+define gui.history_height = 140
 
-## Местоположение, ширина и выравнивание заголовка, показывающего имя говорящего
-## персонажа.
-define gui.history_name_xpos = 233
+## The position, width, and alignment of the label giving the name of the
+## speaking character.
+define gui.history_name_xpos = 155
 define gui.history_name_ypos = 0
-define gui.history_name_width = 233
+define gui.history_name_width = 155
 define gui.history_name_xalign = 1.0
 
-## Местоположение, ширина и выравнивание диалогового текста.
-define gui.history_text_xpos = 255
-define gui.history_text_ypos = 3
-define gui.history_text_width = 1110
+## The position, width, and alignment of the dialogue text.
+define gui.history_text_xpos = 170
+define gui.history_text_ypos = 2
+define gui.history_text_width = 740
 define gui.history_text_xalign = 0.0
+
+## The position, width, and alignment of the label giving the name of the
+## speaking character.
+define gui.nvl_name_xpos = 430
+define gui.nvl_name_ypos = 0
+define gui.nvl_name_width = 150
+define gui.nvl_name_xalign = 1.0
+
+## The position, width, and alignment of the dialogue text.
+define gui.nvl_text_xpos = 450
+define gui.nvl_text_ypos = 8
+define gui.nvl_text_width = 590
+define gui.nvl_text_xalign = 0.0
 
 
 ## Режим NVL ###################################################################
@@ -411,69 +416,3 @@ define gui.nvl_button_xalign = 0.0
 
 define gui.language = "unicode"
 
-
-################################################################################
-## Мобильные устройства
-################################################################################
-
-init python:
-
-    ## Этот параметр увеличивает размер быстрых кнопок, чтобы сделать их
-    ## доступнее для нажатия на планшетах и телефонах.
-    @gui.variant
-    def touch():
-
-        gui.quick_button_borders = Borders(60, 21, 60, 0)
-
-    ## Это изменяет размеры и интервалы различных элементов GUI, чтобы
-    ## убедиться, что они будут лучше видны на телефонах.
-    @gui.variant
-    def small():
-
-        ## Размеры шрифтов.
-        gui.text_size = 45
-        gui.name_text_size = 54
-        gui.notify_text_size = 38
-        gui.interface_text_size = 45
-        gui.button_text_size = 45
-        gui.label_text_size = 51
-
-        ## Регулирует местоположение текстового окна.
-        gui.textbox_height = 360
-        gui.name_xpos = 120
-        gui.dialogue_xpos = 135
-        gui.dialogue_width = 1650
-
-        ## Изменяет размеры и интервалы различных объектов.
-        gui.slider_size = 54
-
-        gui.choice_button_width = 1860
-        gui.choice_button_text_size = 45
-
-        gui.navigation_spacing = 30
-        gui.pref_button_spacing = 15
-
-        gui.history_height = 285
-        gui.history_text_width = 1035
-
-        gui.quick_button_text_size = 30
-
-        ## Местоположение кнопок слотов.
-        gui.file_slot_cols = 2
-        gui.file_slot_rows = 2
-
-        ## Режим NVL.
-        gui.nvl_height = 255
-
-        gui.nvl_name_width = 458
-        gui.nvl_name_xpos = 488
-
-        gui.nvl_text_width = 1373
-        gui.nvl_text_xpos = 518
-        gui.nvl_text_ypos = 8
-
-        gui.nvl_thought_width = 1860
-        gui.nvl_thought_xpos = 30
-
-        gui.nvl_button_width = 1860
-        gui.nvl_button_xpos = 30

@@ -473,8 +473,8 @@ style game_menu_content_frame:
 style game_menu_viewport:
     xsize 1380
 
-style game_menu_vscrollbar:
-    unscrollable gui.unscrollable
+#style game_menu_vscrollbar:
+#    unscrollable gui.unscrollable
 
 style game_menu_side:
     spacing 15
@@ -503,30 +503,55 @@ style return_button:
 
 screen about():
 
-    tag menu
+   # tag menu
 
-    imagebutton auto "gui/button/return_button_%s.png" xpos 43 ypos 24 focus_mask True action Return()  
+    add gui.game_menu_background
+    add "gui/button/name_line_black.png" xpos 25 ypos 17  
+    imagebutton auto "gui/button/return_button_%s.png" xpos 43 ypos 24 focus_mask True action ShowMenu("main_menu"), Hide ("about")   
 
     style_prefix "about"
+    
+    frame:
+        style "about_frame_content"
 
-    vbox:
+        viewport:
+            yinitial 0.0
+            scrollbars "vertical"
+            mousewheel True
+            draggable True
+            pagekeys True
 
-        label "[config.name!t]"
-        text _("Версия [config.version!t]\n")
+            vbox:
+                label "[config.name!t]"
+                text _("Версия [config.version!t]\n")
 
-        ## gui.about обычно установлено в options.rpy.
-        if gui.about:
-            text "[gui.about!t]\n"
+                ## gui.about обычно установлено в options.rpy.
+                if gui.about:
+                    text "[gui.about!t]\n"
 
-        text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+                text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+    
 
 
-style about_label is gui_label
-style about_label_text is gui_label_text
-style about_text is gui_text
 
-style about_label_text:
-    size gui.label_text_size
+#style about_label is gui_label
+#style about_label_text is gui_label_text
+#style about_text is gui_text
+
+#style about_viewport is gui_viewport
+#style about_scrollbar is gui_vscrollbar
+
+#style about_label_text:
+ #   size gui.label_text_size
+
+style about_frame_content:
+    left_margin 60
+    right_margin 30
+    top_margin 10
+    bottom_padding 45
+    top_padding 60
+
+
 
 
 ## Экраны загрузки и сохранения ################################################
