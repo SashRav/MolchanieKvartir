@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sceens/screens.rpy", line 522: Line is indented, but the preceding draggable statement does not expect a block. Please check this line's indentation.
-    pagekeys True
-    ^
+File "game/sceens/game_screen.rpy", line 72: u'quick_menu_button' is not a keyword argument or valid child for the screen statement.
+    quick_menu_button = False
+                     ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Sat Feb 18 22:13:17 2023
+Sun Feb 19 13:22:28 2023

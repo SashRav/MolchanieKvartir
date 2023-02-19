@@ -1,52 +1,44 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-Exception: Style u'about_content_frame1' does not exist.
+After initialization, but before game start.
+  File "game/sceens/game_screen.rpy", line 63, in prepare_screen
+    screen quick_menu_button():
+  File "game/sceens/game_screen.rpy", line 63, in prepare
+    screen quick_menu_button():
+  File "game/sceens/game_screen.rpy", line 64, in prepare
+    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
+  File "game/sceens/game_screen.rpy", line 64, in prepare
+    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
+  File "game/sceens/game_screen.rpy", line 64, in <module>
+    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
+TypeError: SetVariable() got an unexpected keyword argument 'variable'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "renpy/ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "renpy/display/core.py", line 3810, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 456, in visit_all
-    self.child.visit_all(callback, seen=None)
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 572, in visit_all
-    for d in self.visit():
-  File "renpy/display/layout.py", line 1254, in visit
-    self.style._visit_window(rv.append)
-  File "style.pyx", line 541, in renpy.style.StyleCore._visit_window
-  File "style.pyx", line 528, in renpy.style.StyleCore._get_unoffset
-  File "style.pyx", line 493, in renpy.style.StyleCore._get
-  File "style.pyx", line 679, in renpy.style.build_style
-  File "style.pyx", line 142, in renpy.style.get_full_style
-  File "style.pyx", line 98, in renpy.style.get_style
-Exception: Style u'about_content_frame1' does not exist.
+  File "renpy/bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 660, in main
+    run(restart)
+  File "renpy/main.py", line 95, in run
+    renpy.display.screen.prepare_screens()
+  File "renpy/display/screen.py", line 976, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/sceens/game_screen.rpy", line 63, in prepare_screen
+    screen quick_menu_button():
+  File "game/sceens/game_screen.rpy", line 63, in prepare
+    screen quick_menu_button():
+  File "game/sceens/game_screen.rpy", line 64, in prepare
+    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
+  File "game/sceens/game_screen.rpy", line 64, in prepare
+    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
+  File "renpy/python.py", line 1085, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/sceens/game_screen.rpy", line 64, in <module>
+    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
+TypeError: SetVariable() got an unexpected keyword argument 'variable'
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 7.5.3.22090809
 Молчание коммунальных квартир 1.0
-Sat Feb 18 22:11:59 2023
+Sun Feb 19 13:27:20 2023
