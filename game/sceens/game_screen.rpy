@@ -3,8 +3,10 @@
 ########################################################################
 
 screen GameGuide():
+    add "gui/images/d_1/d_1_valya.png" 
     vbox xpos 387 ypos 160:
-        add "gui/images/instructions.png" 
+        add "gui/images/d_1/instructions.png"
+     
 
 #######################################################################
 ## Добавление картинка в глалерею                                    ##
@@ -47,11 +49,12 @@ screen quick_menu():
     if quick_menu_button:
         use quick_menu_button
 
+    textbutton _("Авто") xpos 938 ypos 550 action Preference("auto-forward", "toggle")    
+    
 default quick_menu = True
 
 style quick_button is default
 style quick_button_text is button_text
-
 
 
 ###############################################################

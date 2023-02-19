@@ -272,6 +272,8 @@ define gui.page_spacing = 0
 ## The spacing between file slots.
 define gui.slot_spacing = 10
 
+## The position of the main menu text.
+define gui.main_menu_text_xalign = 1.0
 
 
 ## Рамки #######################################################################
@@ -325,6 +327,7 @@ define gui.vslider_borders = Borders(4, 4, 4, 4)
 
 ## What to do with unscrollable scrollbars in the gui. "hide" hides them, while
 ## None shows them.
+define gui.unscrollable = "hide"
 
 
 ## История #####################################################################

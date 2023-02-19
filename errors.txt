@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sceens/game_screen.rpy", line 72: u'quick_menu_button' is not a keyword argument or valid child for the screen statement.
-    quick_menu_button = False
-                     ^
+File "game/sceens/preferences_screen.rpy", line 35: bar expects a non-empty block.
+    bar:
+        ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Sun Feb 19 13:22:28 2023
+Sun Feb 19 19:09:47 2023

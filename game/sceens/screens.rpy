@@ -102,8 +102,7 @@ define config.mouse = { 'default' : [ ('gui/images/mouse.png', 0, 0)] }
 screen say(who, what):
     style_prefix "say"
 
-    use quick_menu
-
+    
     window:
         id "window"
 
@@ -123,6 +122,7 @@ screen say(who, what):
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
+    use quick_menu
 
 ## Делает namebox доступным для стилизации через объект Character.
 init python:

@@ -60,6 +60,28 @@ label start:
     pause (2)
     hide screen GameGuide with dissolve
 
+#############################
+
+    play music maintheme fadein 4.0
+    window hide
+    scene bg_warning
+    with dissolve
+    pause(8)
+
+    scene d_1_valya
+    show d_1_title
+    with fade
+    pause(1)
+    show d_1_name
+    with  dissolve
+    pause
+    show choice_char_bg
+    with fade
+    show misha normal at left2
+    with dissolve
+    show valya normal at right2
+    with dissolve
+
     call screen ChoiceChar
 
     return

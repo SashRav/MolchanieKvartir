@@ -1,17 +1,11 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 After initialization, but before game start.
-  File "game/sceens/game_screen.rpy", line 63, in prepare_screen
-    screen quick_menu_button():
-  File "game/sceens/game_screen.rpy", line 63, in prepare
-    screen quick_menu_button():
-  File "game/sceens/game_screen.rpy", line 64, in prepare
-    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
-  File "game/sceens/game_screen.rpy", line 64, in prepare
-    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
-  File "game/sceens/game_screen.rpy", line 64, in <module>
-    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
-TypeError: SetVariable() got an unexpected keyword argument 'variable'
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "game/sceens/preferences_screen.rpy", line 88, in <module>
+    xalign xcenter
+NameError: name 'xcenter' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -20,25 +14,27 @@ Full traceback:
     renpy.main.main()
   File "renpy/main.py", line 660, in main
     run(restart)
-  File "renpy/main.py", line 95, in run
-    renpy.display.screen.prepare_screens()
-  File "renpy/display/screen.py", line 976, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/sceens/game_screen.rpy", line 63, in prepare_screen
-    screen quick_menu_button():
-  File "game/sceens/game_screen.rpy", line 63, in prepare
-    screen quick_menu_button():
-  File "game/sceens/game_screen.rpy", line 64, in prepare
-    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
-  File "game/sceens/game_screen.rpy", line 64, in prepare
-    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
+  File "renpy/main.py", line 76, in run
+    renpy.translation.init_translation()
+  File "renpy/translation/__init__.py", line 583, in init_translation
+    renpy.store._init_language() # type: ignore
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "renpy/translation/__init__.py", line 667, in change_language
+    new_change_language(tl, language)
+  File "renpy/translation/__init__.py", line 629, in new_change_language
+    i.apply()
+  File "renpy/ast.py", line 2907, in apply
+    value = renpy.python.py_eval(expr)
+  File "renpy/python.py", line 1092, in py_eval
+    return py_eval_bytecode(code, globals, locals)
   File "renpy/python.py", line 1085, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/sceens/game_screen.rpy", line 64, in <module>
-    imagebutton auto "gui/button/game_menu/game_menu_button_%s.png" xalign 1.0 focus_mask True action Show("game_menu_small"), SetVariable(variable="quick_menu_button", value=False)
-TypeError: SetVariable() got an unexpected keyword argument 'variable'
+  File "game/sceens/preferences_screen.rpy", line 88, in <module>
+    xalign xcenter
+NameError: name 'xcenter' is not defined
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 7.5.3.22090809
 Молчание коммунальных квартир 1.0
-Sun Feb 19 13:27:20 2023
+Sun Feb 19 18:40:22 2023
