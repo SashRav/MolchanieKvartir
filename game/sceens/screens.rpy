@@ -466,7 +466,8 @@ screen about():
 
     add gui.game_menu_background
     add "gui/button/name_line_black.png" xpos 25 ypos 17  
-    imagebutton auto "gui/button/return_button_%s.png" xpos 43 ypos 24 focus_mask True action ShowMenu("main_menu"), Hide ("about")   
+    imagebutton auto "gui/button/return_button_%s.png" xpos 43 ypos 24 focus_mask True action ShowMenu("main_menu"), Hide ("about")
+    add "gui/button/name_about.png" xpos 90 ypos 32   
 
     style_prefix "about"
     

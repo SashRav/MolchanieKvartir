@@ -1,11 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 After initialization, but before game start.
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "game/sceens/preferences_screen.rpy", line 88, in <module>
-    xalign xcenter
-NameError: name 'xcenter' is not defined
+  File "game/sceens/galery_screen.rpy", line 72, in prepare_screen
+    screen ill_galery():
+  File "game/sceens/galery_screen.rpy", line 72, in prepare
+    screen ill_galery():
+  File "game/sceens/galery_screen.rpy", line 91, in prepare
+    if current_page == 3:
+  File "game/sceens/galery_screen.rpy", line 91, in prepare
+    if current_page == 3:
+Exception: A screen named ill_gallery_scr_3 does not exist.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -14,27 +18,23 @@ Full traceback:
     renpy.main.main()
   File "renpy/main.py", line 660, in main
     run(restart)
-  File "renpy/main.py", line 76, in run
-    renpy.translation.init_translation()
-  File "renpy/translation/__init__.py", line 583, in init_translation
-    renpy.store._init_language() # type: ignore
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "renpy/translation/__init__.py", line 667, in change_language
-    new_change_language(tl, language)
-  File "renpy/translation/__init__.py", line 629, in new_change_language
-    i.apply()
-  File "renpy/ast.py", line 2907, in apply
-    value = renpy.python.py_eval(expr)
-  File "renpy/python.py", line 1092, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "renpy/python.py", line 1085, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/sceens/preferences_screen.rpy", line 88, in <module>
-    xalign xcenter
-NameError: name 'xcenter' is not defined
+  File "renpy/main.py", line 95, in run
+    renpy.display.screen.prepare_screens()
+  File "renpy/display/screen.py", line 976, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/sceens/galery_screen.rpy", line 72, in prepare_screen
+    screen ill_galery():
+  File "game/sceens/galery_screen.rpy", line 72, in prepare
+    screen ill_galery():
+  File "game/sceens/galery_screen.rpy", line 91, in prepare
+    if current_page == 3:
+  File "game/sceens/galery_screen.rpy", line 91, in prepare
+    if current_page == 3:
+  File "renpy/sl2/slast.py", line 1916, in prepare
+    raise Exception("A screen named {} does not exist.".format(self.target))
+Exception: A screen named ill_gallery_scr_3 does not exist.
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 7.5.3.22090809
 Молчание коммунальных квартир 1.0
-Sun Feb 19 18:40:22 2023
+Thu Feb 23 20:36:13 2023

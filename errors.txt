@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sceens/preferences_screen.rpy", line 35: bar expects a non-empty block.
-    bar:
-        ^
+File "game/sceens/galery_screen.rpy", line 85: expected '=' not found.
+    default current_page 
+                         ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Sun Feb 19 19:09:47 2023
+Thu Feb 23 20:27:59 2023
