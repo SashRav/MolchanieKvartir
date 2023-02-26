@@ -15,6 +15,11 @@ screen galery():
     imagebutton auto "gui/images/galery/ill_galery_%s.png" xpos 668 ypos 94 focus_mask True action ShowMenu("ill_galery"), Hide ("galery")
 
 
+##############################################
+#### Галерея персонажей
+##############################################
+
+
 screen char_galery():
     add "gui/images/galery/char_galery_bg.png"
 
@@ -68,6 +73,10 @@ screen kaban_char_galery():
     imagebutton auto "gui/button/game_menu_small/game_close_%s.png" xpos 1090 ypos 83 focus_mask True action ShowMenu("char_galery"), Hide("kaban_char_galery")    
 
 
+##############################################
+#### Галерея иллюстраций
+##############################################
+
 
 screen ill_galery():
 
@@ -78,10 +87,9 @@ screen ill_galery():
     add "gui/button/name_ill_galery.png" xpos 90 ypos 32 
     add "gui/images/galery/ill_gallery/ill_galery_pagecount.png"  xpos 800 ypos 12 
 
-    #pages ConditionSwitch (
-    #    "current_page = 1", "ill_gallery_scr_1",
-     #   "current_page = 2", "ill_gallery_scr_2",
-     #   )
+
+#### Отображение страниц
+
     default current_page = 1
     
     if current_page == 1:
@@ -152,10 +160,46 @@ screen ill_galery():
         action SetScreenVariable("current_page", 6)
 
 
+##### Кнопки для отображения картинок
 
+init python:
+    gallery = Gallery()
+
+    gallery.button("ill_image_1")
+    gallery.image("ill_image_unlock_1")
+    gallery.condition("persistent.ill_image_1_unlocked")
+
+    gallery.button("ill_image_2")
+    gallery.image("ill_image_unlock_1")
+    gallery.condition("persistent.ill_image_2_unlocked")
+
+    gallery.button("ill_image_3")
+    gallery.image("ill_image_unlock_1")
+    gallery.condition("persistent.ill_image_3_unlocked")
+
+    gallery.button("ill_image_4")
+    gallery.image("ill_image_unlock_1")
+    gallery.condition("persistent.ill_image_4_unlocked")
+
+    gallery.button("ill_image_5")
+    gallery.image("ill_image_unlock_1")
+    gallery.condition("persistent.ill_image_5_unlocked")
+
+    gallery.button("ill_image_6")
+    gallery.image("ill_image_unlock_1")
+    gallery.condition("persistent.ill_image_6_unlocked")
+
+
+
+###### Страницы с картинками
 
 screen ill_gallery_scr_1():
-    add "gui/images/galery/ill_gallery/ill_locked.png" xpos 150 ypos 150
+    add gallery.make_button(name="ill_image_1", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=30, ypos=125)
+    add gallery.make_button(name="ill_image_2", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=350, ypos=270)
+    add gallery.make_button(name="ill_image_3", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=100, ypos=500)
+    add gallery.make_button(name="ill_image_4", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=700, ypos=125)
+    add gallery.make_button(name="ill_image_5", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=1020, ypos=290)
+    add gallery.make_button(name="ill_image_6", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=770, ypos=500)
 
 screen ill_gallery_scr_2():
     add "gui/images/galery/ill_gallery/ill_locked.png" xpos 150 ypos 500

@@ -44,6 +44,10 @@ define audio.mussad = "audio/music/sad.OGG"
 define audio.musstress = "audio/music/stress.OGG"
 define audio.musradio = "audio/music/elvis.OGG"
 
+### Иллюстрации в галерею
+image ill_image_unlock_1 = "gui/images/galery/ill_gallery/preiew1.png"
+
+
 #классы и расположeниe спрайтов
 init:
     $ right2=Position(xalign=0.85, yalign=1.1)

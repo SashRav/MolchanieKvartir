@@ -80,4 +80,12 @@ screen game_menu_small():
     vbox xalign 0.97 ypos 35 spacing 27:
         imagebutton auto "gui/button/game_menu_small/game_options_%s.png" action ShowMenu('preferences'), Hide("game_menu_small")
         imagebutton auto "gui/button/game_menu_small/game_load_%s.png" action ShowMenu('load'), Hide("game_menu_small")
-        
+
+
+init python:
+    import time
+
+screen ill_note():
+    add "gui/images/notify.png"
+    text "Галерея обновлена" xpos 20 ypos 7 size 20
+    timer 2.0 action Hide("ill_note")

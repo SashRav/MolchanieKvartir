@@ -1,40 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/sceens/galery_screen.rpy", line 72, in prepare_screen
-    screen ill_galery():
-  File "game/sceens/galery_screen.rpy", line 72, in prepare
-    screen ill_galery():
-  File "game/sceens/galery_screen.rpy", line 91, in prepare
-    if current_page == 3:
-  File "game/sceens/galery_screen.rpy", line 91, in prepare
-    if current_page == 3:
-Exception: A screen named ill_gallery_scr_3 does not exist.
+While running game code:
+TypeError: 'unicode' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 277, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 660, in main
-    run(restart)
-  File "renpy/main.py", line 95, in run
-    renpy.display.screen.prepare_screens()
-  File "renpy/display/screen.py", line 976, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/sceens/galery_screen.rpy", line 72, in prepare_screen
-    screen ill_galery():
-  File "game/sceens/galery_screen.rpy", line 72, in prepare
-    screen ill_galery():
-  File "game/sceens/galery_screen.rpy", line 91, in prepare
-    if current_page == 3:
-  File "game/sceens/galery_screen.rpy", line 91, in prepare
-    if current_page == 3:
-  File "renpy/sl2/slast.py", line 1916, in prepare
-    raise Exception("A screen named {} does not exist.".format(self.target))
-Exception: A screen named ill_gallery_scr_3 does not exist.
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "renpy/ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 1061, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "renpy/display/core.py", line 4253, in interact_core
+    rv = renpy.display.focus.mouse_handler(ev, x, y)
+  File "renpy/display/focus.py", line 572, in mouse_handler
+    return change_focus(new_focus, default=default)
+  File "renpy/display/focus.py", line 528, in change_focus
+    rv = widget.focus(default=default)
+  File "renpy/display/behavior.py", line 930, in focus
+    rv = run(self.hovered)
+  File "renpy/display/behavior.py", line 329, in run
+    return action(*args, **kwargs)
+TypeError: 'unicode' object is not callable
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 7.5.3.22090809
 Молчание коммунальных квартир 1.0
-Thu Feb 23 20:36:13 2023
+Sun Feb 26 10:27:41 2023

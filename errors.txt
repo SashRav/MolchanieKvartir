@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sceens/galery_screen.rpy", line 85: expected '=' not found.
-    default current_page 
-                         ^
+File "game/scripts/script_valya.rpy", line 17: reached end of line when expecting ':'.
+    if !persistent.ill_image_2_unlocked == False
+                                                ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Thu Feb 23 20:27:59 2023
+Sun Feb 26 10:03:26 2023
