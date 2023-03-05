@@ -21,6 +21,8 @@ screen galery():
 
 
 screen char_galery():
+    
+    tag menu
     add "gui/images/galery/char_galery_bg.png"
 
     add "gui/button/name_line.png" xpos 25 ypos 17  
@@ -80,6 +82,7 @@ screen kaban_char_galery():
 
 screen ill_galery():
 
+    tag menu
     add "gui/images/galery/char_menu.png" 
 
     add "gui/button/name_line_black.png" xpos 25 ypos 17  
@@ -160,33 +163,63 @@ screen ill_galery():
         action SetScreenVariable("current_page", 6)
 
 
+###### Бэкграунд для развёрнутого изображения 
+
+image ill_image_background = LiveComposite(
+    (1280, 720),
+    (0, 0), "gui/images/galery/char_menu.png",
+    #(0, 0), "gui/images/galery/ill_gallery/ya_loh.png"
+    (30, 125), ConditionSwitch(
+        "persistent.ill_image_1_unlocked != True", "gui/images/galery/ill_gallery/ill_locked.png", 
+        "persistent.ill_image_1_unlocked == True", "gui/images/galery/ill_gallery/preiew1.png"),
+    (350, 270), ConditionSwitch(
+        "persistent.ill_image_2_unlocked != True", "gui/images/galery/ill_gallery/ill_locked.png", 
+        "persistent.ill_image_2_unlocked == True", "gui/images/galery/ill_gallery/preiew1.png"),
+    (100, 500), ConditionSwitch(
+        "persistent.ill_image_3_unlocked != True", "gui/images/galery/ill_gallery/ill_locked.png", 
+        "persistent.ill_image_3_unlocked == True", "gui/images/galery/ill_gallery/preiew1.png"),
+    (660, 125), ConditionSwitch(
+        "persistent.ill_image_4_unlocked != True", "gui/images/galery/ill_gallery/ill_locked.png", 
+        "persistent.ill_image_4_unlocked == True", "gui/images/galery/ill_gallery/preiew1.png"),
+    (970, 290), ConditionSwitch(
+        "persistent.ill_image_5_unlocked != True", "gui/images/galery/ill_gallery/ill_locked.png", 
+        "persistent.ill_image_5_unlocked == True", "gui/images/galery/ill_gallery/preiew1.png"),
+    (770, 500), ConditionSwitch(
+        "persistent.ill_image_6_unlocked != True", "gui/images/galery/ill_gallery/ill_locked.png", 
+        "persistent.ill_image_6_unlocked == True", "gui/images/galery/ill_gallery/preiew1.png")
+    )
+
 ##### Кнопки для отображения картинок
 
 init python:
     gallery = Gallery()
 
+
+    gallery.transition = dissolve ### Плавное открытие изображения
+
     gallery.button("ill_image_1")
-    gallery.image("ill_image_unlock_1")
     gallery.condition("persistent.ill_image_1_unlocked")
+    gallery.image("ill_image_background","gui/images/galery/ill_gallery/illustrations/ill1.png")
+ 
 
     gallery.button("ill_image_2")
-    gallery.image("ill_image_unlock_1")
+    gallery.image("ill_image_background","ill_image_unlock_1")
     gallery.condition("persistent.ill_image_2_unlocked")
 
     gallery.button("ill_image_3")
-    gallery.image("ill_image_unlock_1")
+    gallery.image("ill_image_background","ill_image_background","ill_image_unlock_1")
     gallery.condition("persistent.ill_image_3_unlocked")
 
     gallery.button("ill_image_4")
-    gallery.image("ill_image_unlock_1")
+    gallery.image("ill_image_background","ill_image_unlock_1")
     gallery.condition("persistent.ill_image_4_unlocked")
 
     gallery.button("ill_image_5")
-    gallery.image("ill_image_unlock_1")
+    gallery.image("ill_image_background","ill_image_unlock_1")
     gallery.condition("persistent.ill_image_5_unlocked")
 
     gallery.button("ill_image_6")
-    gallery.image("ill_image_unlock_1")
+    gallery.image("ill_image_background","ill_image_unlock_1")
     gallery.condition("persistent.ill_image_6_unlocked")
 
 
@@ -194,11 +227,13 @@ init python:
 ###### Страницы с картинками
 
 screen ill_gallery_scr_1():
-    add gallery.make_button(name="ill_image_1", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=30, ypos=125)
+    tag menu
+    
+    add gallery.make_button(name="ill_image_1", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=30, ypos=125) 
     add gallery.make_button(name="ill_image_2", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=350, ypos=270)
     add gallery.make_button(name="ill_image_3", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=100, ypos=500)
-    add gallery.make_button(name="ill_image_4", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=700, ypos=125)
-    add gallery.make_button(name="ill_image_5", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=1020, ypos=290)
+    add gallery.make_button(name="ill_image_4", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=660, ypos=125)
+    add gallery.make_button(name="ill_image_5", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=970, ypos=290)
     add gallery.make_button(name="ill_image_6", unlocked="gui/images/galery/ill_gallery/preiew1.png", locked="gui/images/galery/ill_gallery/ill_locked.png", hover_border="gui/images/galery/ill_gallery/ill_hover.png", xpos=770, ypos=500)
 
 screen ill_gallery_scr_2():

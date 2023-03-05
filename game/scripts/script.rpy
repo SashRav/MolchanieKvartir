@@ -45,7 +45,7 @@ define audio.musstress = "audio/music/stress.OGG"
 define audio.musradio = "audio/music/elvis.OGG"
 
 ### Иллюстрации в галерею
-image ill_image_unlock_1 = "gui/images/galery/ill_gallery/preiew1.png"
+image ill_image_unlock_1 = "gui/images/galery/ill_gallery/illustrations/ill1.png"
 
 
 #классы и расположeниe спрайтов
